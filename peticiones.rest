@@ -1,0 +1,125 @@
+GET http://localhost:3000/api/products
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDY0MzQ3NSwiaWF0IjoxNjc0MDM4Njc1fQ.GwRUYtVee6nb46U5-_YJfhuNA0R4kbY_EeBU1J68RSo
+
+###
+GET http://localhost:3000/api/products/min/20/max/100
+###
+GET http://localhost:3000/api/products/deporte
+
+
+
+###
+GET http://localhost:3000/api/products/actives
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDY4NDAzMywiaWF0IjoxNjc0MDc5MjMzfQ.xhJJSPuJU7VXUb6hfoox2MglxuaKYVcvTVmeSaKPcKY
+###
+
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "name": "grapadaora gris",
+  "description": "apr grapar folios",
+  "price": 25,
+  "available": false,
+  "stock": 100,
+  "department": "oficna",
+  "image": "String"
+}
+
+###
+###
+POST http://localhost:3000/api/products
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2QxZDljM2Q3ZGVhMmM5ODZiNzA3IiwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2NzQ2NDQ2MDYsImlhdCI6MTY3NDAzOTgwNn0.FJBFXyGESF9hLqaUGATgKgem67RmfHhGNbw4jIny3kE
+
+{
+  "name": "camisa de cuadros",
+  "description": "es de tela fina y sedosa",
+  "price": 60,
+  "available": true,
+  "stock": 5,
+  "department": "moda",
+  "image": ""
+}
+###
+PUT  http://localhost:3000/api/products/63c86bd24aecb8746da48b28
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDY4NDAzMywiaWF0IjoxNjc0MDc5MjMzfQ.xhJJSPuJU7VXUb6hfoox2MglxuaKYVcvTVmeSaKPcKY
+
+{
+  "price":120
+}
+
+###
+DELETE http://localhost:3000/api/products/63c68fbe6bbf8bdd410b598e
+
+#######
+#USERS#
+#######
+
+GET http://localhost:3000/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDYzOTM4NSwiaWF0IjoxNjc0MDM0NTg1fQ.PmSNDzZnpm53d71kYHJyNg5uHuukiPYrVu44GhtsAzs
+###
+GET http://localhost:3000/api/users/cart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2QxZDljM2Q3ZGVhMmM5ODZiNzA3IiwidXNlcl9yb2xlIjoiYWRtaW4iLCJleHAiOjE2NzQ2NDU5MjIsImlhdCI6MTY3NDA0MTEyMn0.LxBsBgKCvaKYH3ZE8-tF-rHBQ4PkGOIK3d10fpGXlUI
+
+###
+
+GET http://localhost:3000/api/users/cart/add/63c58e41f20ea70c1bb3431c
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDY0MzQ3NSwiaWF0IjoxNjc0MDM4Njc1fQ.GwRUYtVee6nb46U5-_YJfhuNA0R4kbY_EeBU1J68RSo
+
+###
+GET http://localhost:3000/api/users/cart/remove/63c7d130c3d7dea2c986b705
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDY0NzE1NCwiaWF0IjoxNjc0MDQyMzU0fQ.AkLneBGZyXli1mKPFg-9Vct9bKMv4FVn1Ogv7Wqdu28
+###
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "username":"pablo",
+  "email":"pablito@gmail.com",
+  "password":"12345",
+  "address":"c pipe 125",
+  "age":23,
+  "role":"regular"
+  
+}
+###
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "username":"rodolfo",
+  "email":"rodolf@gmail.com",
+  "password":"A12345ab",
+  "address":"calle patricio 20",
+  "age":50,
+  "role":"admin"
+  
+}
+
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "email":"pablito@gmail.com",
+  "password":"12345"
+}
+
+
+###
+
+PUT  http://localhost:3000/api/users/63c6a227480db1c897847bcf
+Content-Type: application/json
+
+{
+  "role":"admin",
+  "email":"marito@mail.com"
+}
+
+###
+DELETE http://localhost:3000/api/users/63c7bd804b3f2a91384f3274
