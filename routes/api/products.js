@@ -10,12 +10,35 @@ const Product = require('../../models/product.model'); //importamos el modelo y 
 
 
 router.get('/', async (req, res) => {
+
+  const { page = 1, limit = 5 } = req.query
+  console.log(page, limit);
+  /**
+   * page = 1 skip = 0 limit =5
+   * page = 2 skip = 5 limit = 5
+   * page =3 skip = 10 limit = 5 (pagina -1 x el limite que tengamos)
+   */
+
   try {
-    const products = await Product.find().populate('owner'); //
-    for (let product of products) { //recorro todos los productos
-      console.log(product.price_tax);
-    }
-    res.json(products);
+    const products = await Product.find()
+      .skip((page - 1) * limit) // 
+      .limit(limit)//
+      .populate('owner'); //
+    // for (let product of products) { //recorro todos los productos
+
+    // }
+    const total = await Product.count(); // recuperacion del total de productos con ese metodo count
+
+
+    res.json({ //*Me genero un objeto en la respuesta para pasar la info que quiero en la respuesta.
+      info: {
+        current_page: parseInt(page),
+        count: total,
+        pages: Math.ceil(total / limit) //redondeamos resultado hacia arriba con Math.ceil
+      },
+      results: products
+
+    });
 
   } catch (error) {
     res.json({ fatal: error.message });

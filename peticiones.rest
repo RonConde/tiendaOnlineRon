@@ -2,7 +2,7 @@
 @hostname = http://localhost
 @port =3000
 @url= {{hostname}}:{{port}}
-GET http://localhost:3000/api/products
+GET http://localhost:3000/api/products?limit=10&page=1
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjNjN2IwZDYxOGI2N2VkY2I0ZDRkYzU4IiwidXNlcl9yb2xlIjoicmVndWxhciIsImV4cCI6MTY3NDY0MzQ3NSwiaWF0IjoxNjc0MDM4Njc1fQ.GwRUYtVee6nb46U5-_YJfhuNA0R4kbY_EeBU1J68RSo
 
 ###
